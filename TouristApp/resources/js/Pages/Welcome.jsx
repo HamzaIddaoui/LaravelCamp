@@ -1,4 +1,5 @@
 import { Link, Head } from '@inertiajs/react';
+import { Button } from 'antd';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
