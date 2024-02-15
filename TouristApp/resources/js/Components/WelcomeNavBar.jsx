@@ -33,7 +33,12 @@ export default function WelcomeNavBar({auth}){
                 <Col md={8} sm={24} xs={24} className="flex items-center justify-end">
                 {auth.user ?
                 (<Button type="button" className="signUp">Log Out</Button>) 
-                : (<Button type="button" className="signUp">Sign Up</Button>)
+                : (
+                <>
+                <Button type="button" className="signUp mr-5" onClick={() => {window.location.href = route('login')}}>Sign Up</Button>
+                <Button type="button" className="signUp" onClick={() => {window.location.href = route('register')}}>Register</Button>
+                </>
+                )
                 }
                 </Col>
             </Row>
