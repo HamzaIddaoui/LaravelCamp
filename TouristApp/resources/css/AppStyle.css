@@ -1,0 +1,261 @@
+.logo-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #42A7C3;
+    font-size: 36px;
+}
+.navbarLink { 
+    color: #333333;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+.welcome-body { 
+    background-color: #FFFFFF;
+}
+.signUp {
+    background-color: #FA8443 !important;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #FFFFFF;
+}
+.logout { 
+    background-color: #FA8443 !important;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.home-text-1{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 56px;
+}
+.home-text-2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+}
+.home-btn{
+    background-color: #121212 !important;
+    color: #FFFFFF;
+    height: 40px;
+}
+.home-btn-text-1{
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    font-size: 8px;
+}
+.home-btn-text-2 {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+}
+.home-flight-btn{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    border-radius: 24px;
+}
+.card-home-1 { 
+    position: relative;
+    bottom: 180px;
+    right: 130px;
+}
+.image-home-text-1 {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+} 
+.image-home-text-2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+}
+.image-home-text-3 {
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+} 
+.image-home-text-4 {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 7px;
+}
+.card-home-2 { 
+    position: relative;
+    bottom: 250px;
+    left: 90px;
+}
+.circle-color-1{
+    background: radial-gradient(circle at 90% 10%, #E2F6FC 84%, #4862D6 36%);
+    height: 344px;
+    width: 344px;
+    position: relative;
+    bottom: 550px;
+    left: 20px;
+    z-index: -1;
+    border-radius: 50%;
+}
+.popular-destination{
+    position: relative;
+    bottom: 300px;
+}
+.popular-destination-title{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+.popular-destination-subtitle{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.destination-card {
+    background-color: #F0F0F0;
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+}
+.destination-card-title1{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    color: #8F8F8F;
+}
+.destination-card-title2{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+.destination-card-title3 {
+    color: #636363;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+.destination-card-title4 {
+    color: #42A7C3;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+.whychooseus {
+    position: relative;
+    bottom: 150px;
+}
+.whychooseus-title1{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+.whychooseus-title2{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.whychooseus-title3{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+.whychooseus-title4{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #636363;
+}
+.flight-card {
+    box-shadow: 0px 16px 24px 0px rgba(96, 97, 112, 0.15);
+    height: 120px;
+    border-radius: 20px;
+}
+.another-product {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+.planyourvacation-title {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+.planyourvacation-title1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #636363;
+}
+@media (max-width: 1600px) {
+    .footer {
+        background-color: #42A8C3;
+        height: 600px;
+    }
+}
+@media (max-width: 1000px) {
+    .footer {
+        background-color: #42A8C3;
+        height: 800px;
+    }
+}
+
+.footer-title-1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+.footer-title-2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #FFFFFF;
+}
+.footer-row-1 {
+    position: relative; 
+    top: 130px;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 50px;
+}
+.footer-btn1{
+    width: 200px;
+    background-color: #42A8C3 !important;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.footer-btn2{
+    width: 200px;
+    background-color: #FFFFFF !important;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    color: #42A8C3;
+}
+.btn-col{
+    position: relative;
+    left: 250px;
+}
+.footer-row-2 {
+    position: relative;
+    top: 200px;
+}
+.footer-row-2-title{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 36px;
+}
+.footer-row-2-title1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-size: 20px;
+}
