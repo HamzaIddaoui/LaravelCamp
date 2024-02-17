@@ -22,7 +22,12 @@ export default function Authenticated({ user, header, children }) {
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                    <img src='/images/Chart_light.png'/>
                                     Dashboard
+                                </NavLink>
+                                <NavLink href={route('trips.index')} active={route().current('trips.index')}>
+                                    <img src='/images/suitcase_light.png'/>
+                                    Trips
                                 </NavLink>
                             </div>
                         </div>

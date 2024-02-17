@@ -259,3 +259,38 @@
     color: #FFFFFF;
     font-size: 20px;
 }
+.registerbtn {
+    background-color: #42A8C3 !important;
+}
+.form-label {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.form-title {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+.itinerary-title { 
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+.save-trip-btn { 
+    background-color: #28a745 !important;
+    color: #FFFFFF;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
+.remove-itinerary-btn {
+    background-color: #dc3545 !important;
+}
+.add-itinerary-btn { 
+    background-color: #ffc107 !important;
+    color: #FFFFFF;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
