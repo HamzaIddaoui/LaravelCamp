@@ -263,34 +263,60 @@
     background-color: #42A8C3 !important;
 }
 .form-label {
-    font-family: "Lato", sans-serif;
+    font-family: "Figtree", sans-serif;
     font-weight: 400;
     font-size: 20px;
 }
 .form-title {
-    font-family: "Lato", sans-serif;
+    font-family: "Figtree", sans-serif;
     font-weight: 700;
-    font-size: 36px;
+    font-size: 30px;
 }
 .itinerary-title { 
-    font-family: "Lato", sans-serif;
+    font-family: "Figtree", sans-serif;
     font-weight: 700;
     font-size: 20px;
 }
 .save-trip-btn { 
     background-color: #28a745 !important;
     color: #FFFFFF;
-    font-family: "Lato", sans-serif;
+    font-family: "Figtree", sans-serif;
     font-weight: 700;
     font-size: 15px;
 }
 .remove-itinerary-btn {
     background-color: #dc3545 !important;
+    font-family: "Figtree", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
 }
 .add-itinerary-btn { 
     background-color: #ffc107 !important;
     color: #FFFFFF;
-    font-family: "Lato", sans-serif;
+    font-family: "Figtree", sans-serif;
     font-weight: 700;
     font-size: 15px;
+}
+.sidebar-text {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.poster-blog-btn { 
+    background-color: #28a745 !important;
+    color: #FFFFFF;
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+.trips-index-title{
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.city-name-card-title {
+    font-family: "Figtree", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
 }

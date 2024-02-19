@@ -18,7 +18,25 @@ class TripController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Trips/Index');
+        $trips = Trip::with(['blog', 'itinenaries'])->get();
+        $topThreeCitynames = [];
+        // Loop through the trips to increment the cityname 
+        foreach ($trips as $trip) {
+            // if the trips has itinenaries
+            if ($trip->itinenaries) {
+                // Loop through the itineraries
+                foreach($trip->itinenaries as $itinenary){
+                    // Increment the cityname value in the array
+                    $topThreeCitynames[$itinenary->cityname] = ($topThreeCitynames[$itinenary->cityname] ?? 0) +1;
+                }
+            }
+        }
+        // sort the topthreecitynames array 
+        arsort($topThreeCitynames);
+        return Inertia::render('Trips/Index', [
+            'trips' => $trips,
+            'mostVisited' => array_slice($topThreeCitynames, 0, 3, true)
+        ]);
     }
 
     /**

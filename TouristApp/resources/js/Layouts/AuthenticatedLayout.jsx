@@ -4,9 +4,14 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
+import { Col, Menu, Row } from 'antd';
+import { PlusCircleOutlined } from '@ant-design/icons';
 
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+    const onClick = (e) => {
+        console.log('click ', e);
+    };
 
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -124,7 +129,25 @@ export default function Authenticated({ user, header, children }) {
                 </header>
             )}
 
-            <main>{children}</main>
+            <main>
+                <Row>
+                    <Col lg={4} md={4} xs={0} sm={0} className='pt-2'>
+                        <Menu
+                        mode='inline'
+                        >
+                            <Menu.Item key='1' className='sidebar-text' onClick={() => window.location.href = route('trips.create')}>
+                                <PlusCircleOutlined className='pr-3'/>
+                                Add Trip
+                            </Menu.Item>
+
+                        </Menu>
+                    </Col>
+                    <Col lg={20} md={20} xs={24} sm={24}>
+                    {children}
+                    </Col>
+                </Row>
+                
+            </main>
         </div>
     );
 }
