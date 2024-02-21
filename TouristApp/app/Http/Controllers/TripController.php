@@ -9,6 +9,8 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Itinerary;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class TripController extends Controller
@@ -18,7 +20,7 @@ class TripController extends Controller
      */
     public function index()
     {
-        $trips = Trip::with(['blog', 'itinenaries'])->get();
+        $trips = Trip::where('user_id',Auth::id())->with(['blog', 'itinenaries'])->get();
         $topThreeCitynames = [];
         // Loop through the trips to increment the cityname 
         foreach ($trips as $trip) {

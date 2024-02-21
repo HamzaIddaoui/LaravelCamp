@@ -1,13 +1,23 @@
 import CityCard from '@/Components/CityCard';
+import TextInput from '@/Components/TextInput';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { PlusCircleOutlined } from '@ant-design/icons';
-import { Head, usePage } from '@inertiajs/react';
-import { Button, Col, Row, Table, Tag } from 'antd';
+import { PlusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { Head, useForm, usePage } from '@inertiajs/react';
+import { Button, Col, Modal, Row, Table, Tag, Upload } from 'antd';
+import { useState } from 'react';
 
 export default function TripIndex({auth}) {
+    const [open, setOpen] = useState(false);
+    const [confirmLoading, setConfirmLoading] = useState(false);
+    const [tripidModel, settripidModel] = useState(null);
+    // Post Blog form data
+    const {data, setData, post,processing, errors, reset} = useForm({
+        description: '',
+        image: '',
+        trip_id: ''
+    });
     // Retrieve the trips from the props
     const {trips, mostVisited} = usePage().props;
-    console.log(mostVisited);
     // Add a unique key property with the value of id
     for (let index = 0; index < trips.length; index++) {
         trips[index]['key'] = trips[index]['id'];
@@ -51,12 +61,12 @@ export default function TripIndex({auth}) {
             title: 'Blog',
             dataIndex: 'blog',
             key: 'blog',
-            render: (blog) => {
+            render: (blog, record) => {
                 return (
                     blog === null ? 
-                    <Button type='button' className='poster-blog-btn flex items-center'>
+                    <Button type='button' onClick={() => showModal(record.id)} className='poster-blog-btn flex items-center'>
                         <PlusCircleOutlined/>
-                        Poster Blog
+                        Post Blog 
                     </Button>
                     : 
                     <span>This trips is already associated to a Blog</span>
@@ -64,6 +74,52 @@ export default function TripIndex({auth}) {
             }
         }
     ]
+
+    /**
+     * Show Modal
+     */
+    const showModal = (id) => {
+        //settripidModel(id);
+        setData('trip_id', id);
+        setOpen(true);
+    };
+    /**
+     * Post Blog Modal ok
+     */
+    const handleOk = () => {
+        // setConfirmLoading(true);
+        // setTimeout(() => {
+        //   setOpen(false);
+        //   setConfirmLoading(false);
+        // }, 2000);
+        console.log(data);
+        post(route('blogs.store',data));
+        setOpen(false);
+    };
+
+    /**
+     * Post Blog Model Cancel
+     */
+    const handleCancel = () => {
+        setOpen(false);
+    };
+
+    /**
+     * Upload input normFile
+     * @param {*} e 
+     * @returns 
+     */
+    const normFile = (e) => {
+        if (Array.isArray(e)) {
+          return e;
+        }
+        return e?.fileList;
+    };
+
+    const beforeUpload = (file, fileList) => {
+        // Allow only one file to be uploaded
+        return fileList.length === 0;
+    };
 
     return (
         <AuthenticatedLayout
@@ -92,7 +148,6 @@ export default function TripIndex({auth}) {
                     </Row>
                     <Row className='flex justify-around'>
                         {Object.entries(mostVisited).map((city) => {
-                            console.log(city);
                             return ( 
                                 <Col lg={6} md={6} sm={10} xs={24}>
                                   <CityCard name={city[0]} image={city[0]} appearences={city[1]}/>
@@ -103,6 +158,55 @@ export default function TripIndex({auth}) {
                 </div>
             </div>
         </div>
+        <Modal 
+        title="Post Blog"
+        open={open} 
+        onOk={handleOk} 
+        confirmLoading={confirmLoading} 
+        onCancel={handleCancel}
+        footer= {[
+            <Button type='primary' onClick={handleCancel} className='remove-itinerary-btn'>
+                Cancel
+            </Button>,
+            <Button type='primary' onClick={handleOk} className='save-trip-btn'>
+                Post
+            </Button>
+        ]}
+        >
+            <form className='m-5' enctype="multipart/form-data">
+                <Row className='m-5 flex items-center'>
+                    <Col md={8} lg={8} sm={12} xs={12} className='form-label'>
+                        Description 
+                    </Col>
+                    <Col md={10} lg={12} sm={12} xs={12}>
+                    <TextInput 
+                    type="text" 
+                    id="description" 
+                    name="description" 
+                    isFocused={true}
+                    value = {data.description} 
+                    onChange = { (e) => setData('description', e.target.value)}
+                    />
+                    </Col> 
+                </Row>
+                <Row className='m-5 flex items-center'>
+                    <Col md={8} lg={8} sm={12} xs={12} className='form-label'>
+                        Image
+                    </Col>
+                    <Col md={10} lg={12} sm={12} xs={12}>
+                        <Upload beforeUpload={beforeUpload} listType='picture-card' name='image' 
+                        onChange={(e) => { 
+                            setData('image',normFile(e)[0]?.originFileObj);
+                        }}
+                        > 
+                           Upload
+                           <PlusOutlined/>
+                        </Upload>
+                    </Col>
+                </Row>
+            </form>
+            
+        </Modal>
     </AuthenticatedLayout>
     )
 }

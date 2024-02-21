@@ -10,6 +10,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Blog extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'trip_id',
+        'description',
+        'image'
+    ];
 
 
     /**
