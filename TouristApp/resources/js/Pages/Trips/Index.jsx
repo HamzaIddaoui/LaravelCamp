@@ -1,7 +1,7 @@
 import CityCard from '@/Components/CityCard';
 import TextInput from '@/Components/TextInput';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { PlusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { PlusCircleOutlined, PlusOutlined, ZoomInOutlined } from '@ant-design/icons';
 import { Head, useForm, usePage } from '@inertiajs/react';
 import { Button, Col, Modal, Row, Table, Tag, Upload } from 'antd';
 import { useState } from 'react';
@@ -69,7 +69,10 @@ export default function TripIndex({auth}) {
                         Post Blog 
                     </Button>
                     : 
-                    <span>This trips is already associated to a Blog</span>
+                    <Button type='button' className='show-blog-btn flex items-center' onClick={() => window.location.href = route('blogs.show', blog.id)}>
+                        <ZoomInOutlined/>
+                        Show Blog
+                    </Button>
                 )
             }
         }

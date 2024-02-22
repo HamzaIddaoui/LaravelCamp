@@ -7,11 +7,17 @@ use App\Http\Requests\StoreBlogRequest;
 use App\Http\Requests\UpdateBlogRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
+
 
 
 
 class BlogController extends Controller
 {
+    public function __construct() 
+    {
+        $this->middleware('checkUserTrip')->only('show');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -57,9 +63,12 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Blog $blog)
+    public function show($id)
     {
-        //
+        $blog = Blog::with('trip.itinenaries')->find($id);
+        return Inertia::render('Blogs/Show', [
+            'blog' => $blog
+        ]);
     }
 
     /**

@@ -320,3 +320,53 @@
     font-weight: 600;
     font-size: 16px;
 }
+.show-blog-btn { 
+    background-color: #FA8443 !important;
+    color: #FFFFFF;
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+.blog-username { 
+    font-family: "Figtree", sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+}
+.post-date {
+    font-family: "Figtree", sans-serif;
+    font-weight: 200;
+    font-size: 15px;
+    font-style: italic;
+}
+.blog-description { 
+    font-family: "Figtree", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    font-style:oblique;
+}
+.blog-description::before { 
+    content: '';
+    display: inline-block;
+    border-left: 2px solid #000; /* You can adjust the color and thickness */
+    height: 1em; /* Adjust the height as needed */
+    margin-right: 0.8em;
+}
+.itinerary-cityname-blog {
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    font-style: italic;
+    color: #7E869E;
+}
+.comments-title {
+    font-family: "Figtree", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+}
+.comment { 
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    font-style: italic;
+    color: #7E869E;
+}
