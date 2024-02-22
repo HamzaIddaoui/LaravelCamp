@@ -1,10 +1,10 @@
-import { Head, useForm, usePage } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Avatar, Col, Divider, Row } from "antd";
+import { Avatar, Col, Row } from "antd";
 import Comment from "@/Components/Comment";
 export default function BlogShow({auth}) { 
     const {blog} = usePage().props;
-    console.log(blog);
+    //console.log(blog);
     /**
      * Function to format the date 
      */

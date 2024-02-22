@@ -34,6 +34,10 @@ export default function Authenticated({ user, header, children }) {
                                     <img src='/images/suitcase_light.png'/>
                                     Trips
                                 </NavLink>
+                                <NavLink href={route('blogs.index')} active={route().current('blogs.index')}>
+                                    <img src='/images/Book.png'/>
+                                    Blogs
+                                </NavLink>
                             </div>
                         </div>
 

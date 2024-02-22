@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateBlogRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
+
 
 
 
@@ -23,7 +25,12 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $blogs = Blog::whereHas('trip', function($query) {
+            $query->where('user_id', Auth::id());
+        })->with('trip.itinenaries')->orderBy('created_at', 'desc')->get();
+        return Inertia::render('Blogs/Index', [
+            'blogs' => $blogs
+        ]);
     }
 
     /**
