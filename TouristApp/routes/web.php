@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ItineraryController;
+use App\Http\Controllers\ExplorerController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -39,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('trips', TripController::class);
     Route::resource('itineraries', ItineraryController::class);
     Route::resource('blogs', BlogController::class);
+    Route::get('/explorer', [ExplorerController::class, 'index'])->name('explorer.index');
 });
 
 

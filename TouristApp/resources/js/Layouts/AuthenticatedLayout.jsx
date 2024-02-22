@@ -26,6 +26,10 @@ export default function Authenticated({ user, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink href={route('explorer.index')} active={route().current('explorer.index')}>
+                                    <img src='/images/Compass_light.png'/>
+                                    Explorer
+                                </NavLink>
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     <img src='/images/Chart_light.png'/>
                                     Dashboard
@@ -138,6 +142,7 @@ export default function Authenticated({ user, header, children }) {
                     <Col lg={4} md={4} xs={0} sm={0} className='pt-2'>
                         <Menu
                         mode='inline'
+                        className='menu-sidebar'
                         >
                             <Menu.Item key='1' className='sidebar-text' onClick={() => window.location.href = route('trips.create')}>
                                 <PlusCircleOutlined className='pr-3'/>

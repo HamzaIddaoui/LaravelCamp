@@ -27,7 +27,7 @@ class BlogController extends Controller
     {
         $blogs = Blog::whereHas('trip', function($query) {
             $query->where('user_id', Auth::id());
-        })->with('trip.itinenaries')->orderBy('created_at', 'desc')->get();
+        })->with(['trip.itinenaries', 'trip.user'])->orderBy('created_at', 'desc')->get();
         return Inertia::render('Blogs/Index', [
             'blogs' => $blogs
         ]);

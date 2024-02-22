@@ -14,14 +14,14 @@ export default function BlogCard({auth, blog}) {
             return `${year}-${month}-${day}`;
     }
     return (
-        <Row className="p-2 ">
-            <Col className="py-4 bg-white shadow-sm" md={24} lg={16} sm={24} xs={24}>
+        <Row className="p-2 flex justify-center">
+            <Col className="py-4 bg-white shadow-sm" md={24} lg={18} sm={24} xs={24}>
             <Row className="p-4 items-center">
                 <Col md={5} lg={3} sm={5} xs={7}>
                     <Avatar size={50} src={<img src="/images/user1.avif"/>}/>
                 </Col>
                 <Col className="blog-username" md={8} lg={13} sm={8} xs={6}>
-                    {auth.user.name}
+                    {blog.trip.user.name}
                 </Col>
                 <Col lg={8} md={12} sm={10} xs={10} className="post-date justify-end flex px-5">
                     Posted : {formatDate(blog.created_at)}
